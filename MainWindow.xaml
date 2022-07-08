@@ -1,0 +1,41 @@
+﻿<Window x:Class="WpfApplication1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Calculator" MaxHeight="350" Height="350" MaxWidth="268" MinHeight="350" MinWidth="268" Width="268" KeyDown="WindowKeyDown" Background="Black">
+    <Grid x:Name="Grid" HorizontalAlignment="Center" VerticalAlignment="Center" ShowGridLines="False" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="50"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+        <TextBox x:Name="InputedText" TextAlignment="Right" IsReadOnly="True" Grid.ColumnSpan="5" VerticalAlignment="Top" Grid.Row="0" Margin="2,2,2,0" Height="25" BorderThickness="2,2,2,0" Background="Black" Foreground="White" MaxLength="40"/>
+        <TextBox x:Name="ResultedText" IsReadOnly="True" TextAlignment="Right" Grid.ColumnSpan="5" VerticalAlignment="Bottom" Grid.Row="0" Margin="2,2,2,0" Height="35" BorderThickness="2,0,2,2" FontSize="18" Text="0" Background="Black" Foreground="White"/>
+        <Button x:Name="_7" Grid.Column="0" Content="7" HorizontalAlignment="Center" Margin="2,2,2,2" Grid.Row="1" VerticalAlignment="Center" Width="46" Height="56" BorderBrush="White" BorderThickness="1" Click="ButtonClick" Foreground="#FFFDFDFD" Background="Black"/>
+        <Button x:Name="_4" Grid.Column="0" Content="4" HorizontalAlignment="Center" Margin="2,2,2,2" Grid.Row="2" VerticalAlignment="Center" Background="Black" Width="46" Height="56" BorderBrush="White" BorderThickness="1" Click="ButtonClick" Foreground="White"/>
+        <Button x:Name="_1" Grid.Column="0" Content="1" HorizontalAlignment="Center" Margin="2,2,2,2" Grid.Row="3" VerticalAlignment="Center" Background="Black" Width="46" Height="56" BorderBrush="White" BorderThickness="1" Click="ButtonClick" Foreground="White"/>
+        <Button x:Name="_0" Grid.ColumnSpan="2" Content="0" HorizontalAlignment="Center" Margin="2,2,2,2" Grid.Row="4" VerticalAlignment="Center" Background="Black" Width="95" Height="56" BorderBrush="White" BorderThickness="1" Click="ButtonClick" Foreground="White"/>
+        <Button x:Name="_8" Grid.Column="1" Content="8" HorizontalAlignment="Center" Margin="2,2,2,2" Grid.Row="1" VerticalAlignment="Center" Background="Black" Width="46" Height="56" BorderBrush="White" BorderThickness="1" Click="ButtonClick" Foreground="White"/>
+        <Button x:Name="_9" Grid.Column="2" Content="9" HorizontalAlignment="Center" Margin="2,2,2,2" Grid.Row="1" VerticalAlignment="Center" Background="Black" Width="46" Height="56" BorderBrush="White" BorderThickness="1" Click="ButtonClick" Foreground="White"/>
+        <Button x:Name="divide" Grid.Column="3" Content="/" HorizontalAlignment="Center" Margin="2,2,2,2" Grid.Row="1" VerticalAlignment="Center" Background="Black" Width="46" Height="56" BorderBrush="White" BorderThickness="1" Click="DivideClick" Foreground="White"/>
+        <Button x:Name="backspace" Grid.Column="4" Content="←" HorizontalAlignment="Center" Margin="2,2,2,2" Grid.Row="1" VerticalAlignment="Center" Background="Black" Width="46" Height="56" BorderBrush="White" BorderThickness="1" Click="BackSpaceClick" Foreground="White"/>
+        <Button x:Name="_5" Grid.Column="1" Content="5" HorizontalAlignment="Center" Margin="2,2,2,2" Grid.Row="2" VerticalAlignment="Center" Background="Black" Width="46" Height="56" BorderBrush="White" BorderThickness="1" Click="ButtonClick" Foreground="White"/>
+        <Button x:Name="_6" Grid.Column="2" Content="6" HorizontalAlignment="Center" Margin="2,2,2,2" Grid.Row="2" VerticalAlignment="Center" Background="Black" Width="46" Height="56" BorderBrush="White" BorderThickness="1" Click="ButtonClick" Foreground="White"/>
+        <Button x:Name="multiply" Grid.Column="3" Content="*" HorizontalAlignment="Center" Margin="2,2,2,2" Grid.Row="2" VerticalAlignment="Center" Background="Black" Width="46" Height="56" BorderBrush="White" BorderThickness="1" Click="MultiplyClick" Foreground="White"/>
+        <Button x:Name="clear" Grid.Column="4" Content="C" HorizontalAlignment="Center" Margin="2,2,2,2" Grid.Row="2" VerticalAlignment="Center" Background="Black" Width="46" Height="56" BorderBrush="White" BorderThickness="1" Click="ClearClick" Foreground="White"/>
+        <Button x:Name="_2" Grid.Column="1" Content="2" HorizontalAlignment="Center" Margin="2,2,2,2" Grid.Row="3" VerticalAlignment="Center" Background="Black" Width="46" Height="56" BorderBrush="White" BorderThickness="1" Click="ButtonClick" Foreground="White"/>
+        <Button x:Name="_3" Grid.Column="2" Content="3" HorizontalAlignment="Center" Margin="2,2,2,2" Grid.Row="3" VerticalAlignment="Center" Background="Black" Width="46" Height="56" BorderBrush="White" BorderThickness="1" Click="ButtonClick" Foreground="White"/>
+        <Button x:Name="dot" Grid.Column="2" Content="." HorizontalAlignment="Center" Margin="2,2,2,2" Grid.Row="4" VerticalAlignment="Center" Background="Black" Width="46" Height="56" BorderBrush="White" BorderThickness="1" Click="DotClick" Foreground="White"/>
+        <Button x:Name="minus" Grid.Column="3" Content="-" HorizontalAlignment="Center" Margin="2,2,2,2" Grid.Row="3" VerticalAlignment="Center" Background="Black" Width="46" Height="56" BorderBrush="White" BorderThickness="1" Click="MinusClick" Foreground="White"/>
+        <Button x:Name="plus" Grid.Column="3" Content="+" HorizontalAlignment="Center" Margin="2,2,2,2" Grid.Row="4" VerticalAlignment="Center" Background="Black" Width="46" Height="56" BorderBrush="White" BorderThickness="1" Click="PlusClick" Foreground="White"/>
+        <Button x:Name="equal" Grid.Column="4" Content="=" HorizontalAlignment="Center" Margin="2,2,2,2" Grid.RowSpan="2" VerticalAlignment="Bottom" Background="Black" Width="46" Height="116" BorderBrush="White" BorderThickness="1" Grid.Row="3" Click="EqualClick" Foreground="White"/>
+    </Grid>
+</Window>
